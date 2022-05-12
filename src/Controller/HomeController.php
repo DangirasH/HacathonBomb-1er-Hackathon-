@@ -36,7 +36,7 @@ class HomeController extends AbstractController
         return $this->twig->render('Home/index.html.twig', [
             'airQuality' => $this->airQuality,
             'detailsAirQuality' => $detailsAirQuality,
-            'lon' => $lon, 
+            'lon' => $lon,
             'lat' => $lat,
         ]);
     }
