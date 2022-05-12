@@ -22,7 +22,7 @@ CREATE TABLE `user` (
  CREATE TABLE `bombed` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `lat` FLOAT NOT NULL,
-  `long` FLOAT NOT NULL,
+  `lon` FLOAT NOT NULL,
   `date` DATE NOT NULL,
   `user_id` INT
   );
