@@ -1,5 +1,17 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1></h1>
+
+    <h1>Hello Wilder !</h1>
+
+    {% include "Home/_formAddress.html.twig" %}
+    Latitude : {{ lat }}
+    Longitude : {{ lon }}
+    
+	{{ dump(detailsAirQuality) }}
+
+	{{ airQuality[detailsAirQuality] }}
+
+    {% include "Home/_formBomb.html.twig" %}
+
 {% endblock %}
