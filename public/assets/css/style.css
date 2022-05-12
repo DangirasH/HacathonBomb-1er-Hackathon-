@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lora:wght@400;500;600&family=Merriweather:wght@300;400;900&display=swap');
 @import url('slogan.css');
 :root {
+    --bs-exp-bar-back-pauvre-rgb: 51, 102, 51;
+    --bs-exp-bar-back-pauvre: #336633;
+
+    --bs-exp-bar-back-rgb: 215, 215, 215;
+    --bs-exp-bar-back: #D7D7D7;
+
     --bs-harchi-pauvre-rgb: 255, 115, 115;
     --bs-harchi-pauvre: #FF7373;
 
