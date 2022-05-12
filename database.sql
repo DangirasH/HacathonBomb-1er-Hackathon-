@@ -80,3 +80,11 @@ CREATE TABLE `user` (
 
 ALTER TABLE bombed
 ADD FOREIGN KEY (user_id) REFERENCES user(id);
+
+INSERT INTO event (
+  `name`,
+  `password`,
+  `xp`,
+   `level`,
+  )
+VALUES (
