@@ -77,9 +77,9 @@ ALTER TABLE `item`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 CREATE TABLE `user` (
-  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(80) NOT NULL,
-  `password` NOT NULL,
+  `password` VARCHAR(80) NOT NULL,
   `xp` INT NOT NULL,
   `level` INT NOT NULL
 );
@@ -95,10 +95,4 @@ CREATE TABLE `user` (
 ALTER TABLE bombed
 ADD FOREIGN KEY (user_id) REFERENCES user(id);
 
-INSERT INTO event (
-  `name`,
-  `password`,
-  `xp`,
-  `level`,
-  )
-VALUES (
+INSERT INTO `user` (`name`, `password`, `xp`, `level`) VALUES ('Johnny', 'userp', 0, 1);
