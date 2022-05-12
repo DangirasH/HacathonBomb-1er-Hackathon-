@@ -18,7 +18,7 @@ class RegisterController extends AbstractController
             $userManager = new UserManager();
             $userManager->insert($user);
 
-            header('Location: geoloc');
+            header('Location: /geoloc');
             return null;
         }
 
