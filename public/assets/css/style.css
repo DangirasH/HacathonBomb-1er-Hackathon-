@@ -48,7 +48,10 @@
 
     --line-height: 1.5; 
 }
-
+body{
+    background-color: var(--bs-dark-light);
+}
 p{
     font-size: 2rem;
+    margin: 0%;
 }
