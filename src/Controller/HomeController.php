@@ -3,12 +3,18 @@
 namespace App\Controller;
 
 use App\Model\AddressManager;
+use App\Model\AirManager;
 
 class HomeController extends AbstractController
 {
-    /**
-     * Display home page
-     */
+    public array $airQuality = [
+        1 => 'Très bon',
+        2 => 'Bon',
+        3 => 'Bof',
+        4 => 'Faible',
+        5 => 'JS',
+    ];
+
     public function index(): string
     {
         $addressManager = new AddressManager();
@@ -23,7 +29,15 @@ class HomeController extends AbstractController
             $lat = $details[1];
         }
 
+        $airManager = new AirManager();
+        $air = $airManager->show();
+        $detailsAirQuality = $air ['list'][0]['main']['aqi'];
 
-        return $this->twig->render('Home/index.html.twig', ['lon' => $lon, 'lat' => $lat]);
+        return $this->twig->render('Home/index.html.twig', [
+            'airQuality' => $this->airQuality,
+            'detailsAirQuality' => $detailsAirQuality,
+            'lon' => $lon, 
+            'lat' => $lat,
+        ]);
     }
 }
