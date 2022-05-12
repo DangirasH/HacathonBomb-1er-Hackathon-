@@ -11,12 +11,11 @@ class UserManager extends AbstractManager
         // prepared request
         $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE name=:name");
         $statement->bindValue('name', $name, \PDO::PARAM_STR);
-
         $statement->execute();
 
         return $statement->fetch();
     }
-  
+
     public function insert(array $user): void
     {
         $statement = $this->pdo->prepare(
