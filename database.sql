@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 -- Base de données :  `hackathon`
 --
 
+
 -- -- -----------------------------------------------------
 -- Table `hackathon`.`user`
 -- -----------------------------------------------------
@@ -77,20 +78,22 @@ ALTER TABLE `item`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 CREATE TABLE `user` (
-  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(80) NOT NULL,
-  `password` DATETIME NOT NULL,
+  `password` VARCHAR(80) NOT NULL,
   `xp` INT NOT NULL,
   `level` INT NOT NULL
 );
 
  CREATE TABLE `bombed` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `lat` VARCHAR(255) NOT NULL,
-  `long` INT NOT NULL,
+  `lat` FLOAT NOT NULL,
+  `long` FLOAT NOT NULL,
   `date` DATE NOT NULL,
   `user_id` INT
   );
 
 ALTER TABLE bombed
 ADD FOREIGN KEY (user_id) REFERENCES user(id);
+
+INSERT INTO `user` (`name`, `password`, `xp`, `level`) VALUES ('Johnny', 'userp', 0, 1);

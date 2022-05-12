@@ -1,16 +1,43 @@
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
 
 {% block content %}
-
-    <h1>Hello Wilder !</h1>
-
-    {% include "Home/_form.html.twig" %}
-    Latitude : {{ lat }}
-    Longitude : {{ lon }}
-    
-	{{ dump(detailsAirQuality) }}
-
-	{{ airQuality[detailsAirQuality] }}
-
+	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
+		<div class="col-lg-12 d-flex justify-content-center">
+			<button type="button" class="btn btn-primary">Primary</button>
+		</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
+		<div class="col-lg-12 d-flex justify-content-center">
+			<h1>Comment jouer</h1>
+		</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
+		<div class="col-lg-12 d-flex justify-content-center">
+			<p>lorem ipsum fsgdfgvbef fesfdqs dfefsq fqfds qd  q dqdqd fqqzqgs ggsdqgdsfq frsfqd hlfsd hfus fhjs jfsddj</p>
+		</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex align-items-center">
+		<h2 class="bg-secondary me-4">Bien</h2>
+		<div>Cela indique que l'air est bien</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex align-items-center">
+		<h2 class="bg-secondary me-4">Bof</h2>
+		<div>Cela indique que l'air est bien</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex align-items-center">
+		<h2 class="bg-secondary me-4">Moyen</h2>
+		<div>Cela indique que l'air est bien</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex align-items-center">
+		<h2 class="bg-secondary me-4">Pauvre</h2>
+		<div>Cela indique que l'air est bien</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex align-items-center">
+		<h2 class="bg-secondary me-4">Nique</h2>
+		<div>Cela indique que l'air est bien</div>
+	</div>
 
 {% endblock %}
