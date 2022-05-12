@@ -6,7 +6,7 @@ use Symfony\Component\HttpClient\HttpClient;
 
 class AirManager extends AbstractManager
 {
-    public function show()
+    public function show($lat, $lon)
     {
         $client = HttpClient::create();
         $response = $client->request(
@@ -14,8 +14,8 @@ class AirManager extends AbstractManager
             'http://api.openweathermap.org/data/2.5/air_pollution',
             [
                 'query' => [
-                    'lat' => '50.06',
-                    'lon' => '01.49',
+                    'lat' => $lat,
+                    'lon' => $lon,
                     'appid' => '1c368d32a1cabbfeb39f4f2186294792'
                 ],
             ]
