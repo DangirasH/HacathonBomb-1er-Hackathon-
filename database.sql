@@ -17,14 +17,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `simple-mvc`
+-- Base de données :  `hackathon`
 --
+
+
+-- -- -----------------------------------------------------
+-- Table `hackathon`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(80) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Content `hackathon`.`user`
+-- -----------------------------------------------------
+INSERT INTO `user` (`id`, `name`, `password`) VALUES
+(1, "tissus_jaures@admin.com", "$2y$10$IRb27co3TwTwMOrv2qDy5OcwdyExj92eYJV3jIMM1rS1.JoCpaeWW");
 
 -- --------------------------------------------------------
-
---
 -- Structure de la table `item`
---
+-----------------------------------------------------------
 
 CREATE TABLE `item` (
   `id` int(11) UNSIGNED NOT NULL,
@@ -63,9 +78,9 @@ ALTER TABLE `item`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 CREATE TABLE `user` (
-  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(80) NOT NULL,
-  `password` NOT NULL,
+  `password` VARCHAR(80) NOT NULL,
   `xp` INT NOT NULL,
   `level` INT NOT NULL
 );
@@ -81,10 +96,4 @@ CREATE TABLE `user` (
 ALTER TABLE bombed
 ADD FOREIGN KEY (user_id) REFERENCES user(id);
 
-INSERT INTO event (
-  `name`,
-  `password`,
-  `xp`,
-  `level`,
-  )
-VALUES (
+INSERT INTO `user` (`name`, `password`, `xp`, `level`) VALUES ('Johnny', 'userp', 0, 1);
