@@ -4,7 +4,7 @@
 
     <h1>Hello Wilder !</h1>
 
-    {% include "Home/_form.html.twig" %}
+    {% include "Home/_formAddress.html.twig" %}
     Latitude : {{ lat }}
     Longitude : {{ lon }}
     
@@ -12,5 +12,6 @@
 
 	{{ airQuality[detailsAirQuality] }}
 
+    {% include "Home/_formBomb.html.twig" %}
 
 {% endblock %}

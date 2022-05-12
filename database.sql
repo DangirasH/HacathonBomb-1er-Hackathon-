@@ -79,18 +79,26 @@ ALTER TABLE `item`
 CREATE TABLE `user` (
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(80) NOT NULL,
-  `password` DATETIME NOT NULL,
+  `password` NOT NULL,
   `xp` INT NOT NULL,
   `level` INT NOT NULL
 );
 
  CREATE TABLE `bombed` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `lat` VARCHAR(255) NOT NULL,
-  `long` INT NOT NULL,
+  `lat` FLOAT NOT NULL,
+  `long` FLOAT NOT NULL,
   `date` DATE NOT NULL,
   `user_id` INT
   );
 
 ALTER TABLE bombed
 ADD FOREIGN KEY (user_id) REFERENCES user(id);
+
+INSERT INTO event (
+  `name`,
+  `password`,
+  `xp`,
+  `level`,
+  )
+VALUES (
