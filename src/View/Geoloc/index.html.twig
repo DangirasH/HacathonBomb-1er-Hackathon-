@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    {% include "Geoloc/_formAddress.html.twig" %}
+    Latitude : {{ lat }}
+    Longitude : {{ lon }}
+    
+	{{ dump(detailsAirQuality) }}
+
+	{{ airQuality[detailsAirQuality] }}
+
+
+
+{% endblock %}
