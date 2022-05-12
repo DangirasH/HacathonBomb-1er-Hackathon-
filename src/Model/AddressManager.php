@@ -8,13 +8,20 @@ class AddressManager extends AbstractManager
 {
     public const TABLE = '';
 
-    public function search()
+    public function search($housenumber, $street, $postcode)
     {
         $content = [];
         $client = HttpClient::create();
         $response = $client->request(
             'GET',
-            'https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port&postcode=44380&limit=1'
+            'https://api-adresse.data.gouv.fr/search',
+            [
+                'query' => [
+                    'q' => $housenumber . ' ' . $street,
+                    'postcode' => $postcode,
+                    'limit' => 1,
+                ]
+            ]
         );
 
         $statusCode = $response->getStatusCode();
