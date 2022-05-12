@@ -6,11 +6,11 @@ class UserManager extends AbstractManager
 {
     public const TABLE = "user";
 
-    public function selectOneByEmail(string $email): array|false
+    public function selectOneByName(string $name): array|false
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE email=:email");
-        $statement->bindValue('email', $email, \PDO::PARAM_STR);
+        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . " WHERE name=:name");
+        $statement->bindValue('name', $name, \PDO::PARAM_STR);
 
         $statement->execute();
 

@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `email` VARCHAR(255) NOT NULL,
+  `name` VARCHAR(80) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -33,7 +33,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Content `hackathon`.`user`
 -- -----------------------------------------------------
-INSERT INTO `user` (`id`, `email`, `password`) VALUES
+INSERT INTO `user` (`id`, `name`, `password`) VALUES
 (1, "tissus_jaures@admin.com", "$2y$10$IRb27co3TwTwMOrv2qDy5OcwdyExj92eYJV3jIMM1rS1.JoCpaeWW");
 
 -- --------------------------------------------------------

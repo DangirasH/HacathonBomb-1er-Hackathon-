@@ -16,7 +16,7 @@ class LoginController extends AbstractController
 
             if (empty($errors)) {
                 $userManager = new UserManager();
-                $user = $userManager->selectOneByEmail($connection['email']);
+                $user = $userManager->selectOneByName($connection['name']);
                 if ($user) {
                     if (password_verify($connection['password'], $user['password'])) {
                         $_SESSION['user'] = $user['id'];
@@ -25,7 +25,7 @@ class LoginController extends AbstractController
                         $errors[] = 'Mot de passe inconnu';
                     }
                 } else {
-                    $errors[] = 'Email inconnu';
+                    $errors[] = 'Name inconnu';
                 }
             }
         }
@@ -46,14 +46,11 @@ class LoginController extends AbstractController
     private function validate(array $connection): array
     {
         $errors = [];
-        if (empty($connection['email'])) {
-            $errors[] = 'Le champ email ne doit pas être vide';
+        if (empty($connection['name'])) {
+            $errors[] = 'Le champ name ne doit pas être vide';
         }
         if (empty($connection['password'])) {
             $errors[] = 'Le mot de passe ne doit pas être vide';
-        }
-        if (!filter_var($connection['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = "format d'email invalide";
         }
         return $errors;
     }
