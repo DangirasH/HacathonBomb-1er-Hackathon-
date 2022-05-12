@@ -2,4 +2,6 @@
 
 {% block content %}
     <h1>Hello Wilder !</h1>
+    Latitude : {{ details[0]['geometry']['coordinates'][1] }}
+    Longitude : {{ details[0]['geometry']['coordinates'][0] }}
 {% endblock %}

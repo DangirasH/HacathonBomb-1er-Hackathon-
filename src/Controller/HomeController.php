@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\AddressManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -9,6 +11,10 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $addressManager = new AddressManager();
+        $data = $addressManager->search();
+        $details = $data['features'];
+
+        return $this->twig->render('Home/index.html.twig', ['details' => $details]);
     }
 }
