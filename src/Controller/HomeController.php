@@ -20,6 +20,7 @@ class HomeController extends AbstractController
         $addressManager = new AddressManager();
         $lat = 0;
         $lon = 0;
+        $detailsAirQuality = 0;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $address = array_map('trim', $_POST);
 
@@ -27,11 +28,11 @@ class HomeController extends AbstractController
             $details = $data['features'][0]['geometry']['coordinates'];
             $lon = $details[0];
             $lat = $details[1];
-        }
 
-        $airManager = new AirManager();
-        $air = $airManager->show();
-        $detailsAirQuality = $air ['list'][0]['main']['aqi'];
+            $airManager = new AirManager();
+            $air = $airManager->show();
+            $detailsAirQuality = $air['list'][0]['main']['aqi'];
+        }
 
         return $this->twig->render('Home/index.html.twig', [
             'airQuality' => $this->airQuality,
