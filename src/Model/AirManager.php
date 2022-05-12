@@ -6,7 +6,7 @@ use Symfony\Component\HttpClient\HttpClient;
 
 class AirManager extends AbstractManager
 {
-    public function show($lat, $long)
+    public function show($lat, $lon)
     {
         $client = HttpClient::create();
         $response = $client->request(
@@ -15,7 +15,7 @@ class AirManager extends AbstractManager
             [
                 'query' => [
                     'lat' => $lat,
-                    'lon' => $long,
+                    'lon' => $lon,
                     'appid' => '1c368d32a1cabbfeb39f4f2186294792'
                 ],
             ]
