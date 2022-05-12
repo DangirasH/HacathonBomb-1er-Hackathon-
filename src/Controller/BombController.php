@@ -2,42 +2,26 @@
 
 namespace App\Controller;
 
-use App\Model\AddressManager;
-use App\Model\AirManager;
+use App\Model\BombedManager;
 
 class BombController extends AbstractController
 {
-    public array $airQuality = [
-        1 => 'Très bon',
-        2 => 'Bon',
-        3 => 'Bof',
-        4 => 'Faible',
-        5 => 'JS',
-    ];
-
     public function index(): string
     {
-        $addressManager = new AddressManager();
-        $lat = 0;
-        $lon = 0;
+        $lat = $_GET['lat'];
+        $long = $_GET['long'];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $address = array_map('trim', $_POST);
+            $bomb = array_map('trim', $_POST);
 
-            $data = $addressManager->search($address['housenumber'], $address['street'], $address['postcode']);
-            $details = $data['features'][0]['geometry']['coordinates'];
-            $lon = $details[0];
-            $lat = $details[1];
+            $bombedManager = new BombedManager();
+            if (empty($bombedManager->selectBomb($bomb['lat'], $bomb['long']))) {
+                $bombedManager->insert($bomb);
+                header('Location: profil');
+            }
         }
-
-        $airManager = new AirManager();
-        $air = $airManager->show();
-        $detailsAirQuality = $air ['list'][0]['main']['aqi'];
-
         return $this->twig->render('Bomb/index.html.twig', [
-            'airQuality' => $this->airQuality,
-            'detailsAirQuality' => $detailsAirQuality,
-            'lon' => $lon,
             'lat' => $lat,
+            'long' => $long
         ]);
     }
 }

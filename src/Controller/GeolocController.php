@@ -15,7 +15,7 @@ class GeolocController extends AbstractController
         5 => 'JS',
     ];
 
-    public function index(): string
+    public function index(): ?string
     {
         $addressManager = new AddressManager();
         $lat = 0;
@@ -28,11 +28,14 @@ class GeolocController extends AbstractController
             $details = $data['features'][0]['geometry']['coordinates'];
             $lon = $details[0];
             $lat = $details[1];
-        }
 
-        $airManager = new AirManager();
-        $air = $airManager->show();
-        $detailsAirQuality = $air ['list'][0]['main']['aqi'];
+            $airManager = new AirManager();
+            $air = $airManager->show();
+            $detailsAirQuality = $air['list'][0]['main']['aqi'];
+
+            header('Location: bomb?long=' . $lon . '&lat=' . $lat);
+            return null;
+        }
 
         return $this->twig->render('Geoloc/index.html.twig', [
             'airQuality' => $this->airQuality,
