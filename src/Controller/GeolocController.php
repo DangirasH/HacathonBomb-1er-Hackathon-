@@ -33,7 +33,7 @@ class GeolocController extends AbstractController
             $air = $airManager->show($lat, $lon);
             $detailsAirQuality = $air['list'][0]['main']['aqi'];
 
-            header('Location: bomb?lon=' . $lon . '&lat=' . $lat);
+            header('Location: bomb?lon=' . $lon . '&lat=' . $lat . '&airQuality=' . $detailsAirQuality);
             return null;
         }
 
