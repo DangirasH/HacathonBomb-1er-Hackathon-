@@ -55,8 +55,13 @@
 }
 body{
     background-color: var(--bs-dark-light);
+    max-height: 100%;
 }
 p{
     font-size: 2rem;
     margin: 0%;
+}
+
+div button img{
+    height: 14rem;
 }
