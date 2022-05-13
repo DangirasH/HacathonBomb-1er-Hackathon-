@@ -15,6 +15,14 @@ class BombController extends AbstractController
         5 => 'Toxique',
     ];
 
+    public array $avatar = [
+        1 => '/assets/images/sunflower-seed.png',
+        2 => '/assets/images/sprout.png',
+        3 => '/assets/images/plante.png',
+        4 => '/assets/images/tree.png',
+    ];
+
+
     public function index(): string
     {
         $lat = $_GET['lat'];
@@ -43,6 +51,7 @@ class BombController extends AbstractController
             'alreadyBombed' => $alreadyBombed,
             'player' => $player,
             'progression' => $progression,
+            'avatar' => $this->avatar,
         ]);
     }
 }
