@@ -1,12 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+		<div class="container d-flex justify-content-center">
+			<a type="button" class="btn bg-warning rounded-pill m-3 p-2 fs-1" href="/connexion">
+				<strong class="p-3">{{ alreadyBombed }}</strong>
+			</a>
+		</div>
 
 	{% include "Bomb/_formBomb.html.twig" %}
 
 	<main class"">
 
-		<p>{{ alreadyBombed }}</p>
 
 		<div class="container card d-flex justify-content-end mt-5 mb-5 rounded-circle" style="width: 10rem;">
 			<img src="/assets/images/sunflower-seed.png" class="card-img-top" alt="...">

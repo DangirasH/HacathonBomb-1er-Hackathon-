@@ -21,8 +21,8 @@ CREATE TABLE `user` (
 
  CREATE TABLE `bombed` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `lat` FLOAT NOT NULL,
-  `lon` FLOAT NOT NULL,
+  `lat` DECIMAL(7,5) NOT NULL,
+  `lon` DECIMAL(7,6) NOT NULL,
   `date` DATE NOT NULL,
   `user_id` INT
   );
