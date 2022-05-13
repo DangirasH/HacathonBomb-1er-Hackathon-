@@ -1,0 +1,7 @@
+button.btn {
+    background-color: var(--bs-secondary-light);
+}
+
+a.btn{
+    background-color: var(--bs-moyen);
+}
