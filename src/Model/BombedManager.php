@@ -27,7 +27,6 @@ class BombedManager extends AbstractManager
     {
         $query = 'SELECT * FROM bombed WHERE lat = ' . $lat . ' AND lon = ' . $lon;
 
-
         return $this->pdo->query($query)->fetchAll();
     }
 }

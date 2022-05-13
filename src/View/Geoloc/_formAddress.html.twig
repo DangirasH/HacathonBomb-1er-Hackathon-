@@ -1,41 +1,27 @@
 <div class="container">
-		<form method="POST" action="">
-			{% if errors is not empty %}
-				<div class="alert alert-danger">
-					{% for error in errors %}
-						<p>{{ error }}</p>
-					{% endfor %}
-				</div>
-			{% endif %}
-			<h1 class="d-flex justify-content-center mt-2 text-dark">Où êtes vous ?</h1>
-			<div class="mb-4">
-				<label class="form-label text-dark" for="housenumber">n°</label>
-				<input class="form-control border-0" type="number" id="housenumber" value="" name="housenumber" >
+	<form method="POST" action="">
+		{% if errors is not empty %}
+			<div class="alert alert-danger">
+				{% for error in errors %}
+					<p>{{ error }}</p>
+				{% endfor %}
 			</div>
-			<div class="mb-4">
-				<label class="form-label text-dark" for="street">rue/avenue/quai</label>
-				<input class="form-control border-0" type="number" id="street" value="" name="street" >
-			</div>
-			<div class="mb-4">
-				<label class="form-label text-dark" for="postcode">code postal</label>
-				<input class="form-control border-0" type="number" id="postcode" value="" name="postcode" >
-			</div>
-			<div class="d-flex justify-content-center">
-				<button class="btn bg-secondary- border-0 p-3">Envoie</button>
-			</div>
-		</form>
-	</div>
-
-
-<form method="post">
-
-	<label for="housenumber">n°</label>
-	<input type="number" value="" name="housenumber" id="housenumber" required>
-	<label for="street">rue</label>
-	<input type="text" value="" name="street" id="street" required>
-	<label for="postcode">Code postal</label>
-	<input type="number" value="" name="postcode" id="postcode" required>
-
-	<button>Envoi</button>
-</form>
-
+		{% endif %}
+		<h1 class="d-flex justify-content-center mt-2 text-dark">Où êtes vous ?</h1>
+		<div class="mb-4">
+			<label class="form-label text-dark" for="housenumber">n°</label>
+			<input class="form-control border-0" type="number" id="housenumber" value="" name="housenumber" required>
+		</div>
+		<div class="mb-4">
+			<label class="form-label text-dark" for="street">rue/avenue/quai</label>
+			<input class="form-control border-0" type="text" id="street" value="" name="street" required>
+		</div>
+		<div class="mb-4">
+			<label class="form-label text-dark" for="postcode">code postal</label>
+			<input class="form-control border-0" type="number" id="postcode" value="" name="postcode" required>
+		</div>
+		<div class="d-flex justify-content-center">
+			<button class="btn bg-secondary- border-0 p-3">Envoi</button>
+		</div>
+	</form>
+</div>

@@ -21,10 +21,17 @@ class PlayerController extends AbstractController
         $points = 0;
         if (isset($_GET['airQuality'])) {
             $points = $player['xp'] + $_GET['airQuality'] * 10;
-
             $playerManager->updateXp($player['id'], $points);
-        }
 
-        return $this->twig->render('Player/index.html.twig', ['player' => $player]);
+            $level = Level::calculate($points);
+            $playerManager->updateLevel($player['id'], $level);
+        }
+        $player = $playerManager->selectOneById($_SESSION['user']);
+        $progression = $player['xp'] - ($player['level'] - 1) * 100;
+
+        return $this->twig->render('Player/index.html.twig', [
+            'player' => $player,
+            'progression' => $progression,
+        ]);
     }
 }
