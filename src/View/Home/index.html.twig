@@ -5,9 +5,14 @@
 
 {% block content %}
 
-	<div class="container-fluid d-flex justify-content-center align-items-center header">
+	<div class="container-fluid d-flex flex-column justify-content-center align-items-center header mt-3">
+		<div class="">
+			<h1>Flower Bombers</h1>
+		</div>
 		<div class="col-lg-12 d-flex justify-content-center align-items-center">
-			<a type="button" class="boutonLoginHome btn rounded-pill m-3 p-2" href="/connexion"><strong class="p-3">Login</strong></a>
+			<a type="button" class="boutonLoginHome btn rounded-pill m-3 p-2" href="/connexion">
+				<strong class="p-3">Login</strong>
+			</a>
 		</div>
 	</div>
 
@@ -28,25 +33,23 @@
 		</div>
 	</div>
 	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
-		<h4 class="first rounded-pill text-center w-25 p-2 me-4">Bien</h4>
+		<h4 class="first rounded-pill text-center w-50 p-2 me-4">Bien</h4>
 		<div>Cela indique que l'air est de bonne qualitée</div>
 	</div>
 	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
-		<h4 class="second rounded-pill text-center w-25 p-2 me-4">Viable</h4>
+		<h4 class="second rounded-pill text-center w-50 p-2 me-4">Viable</h4>
 		<div>Cela indique que vous etes en zone normal</div>
 	</div>
 	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
-		<h4 class="third rounded-pill text-center w-25 p-2 me-4">Moyen</h4>
+		<h4 class="third rounded-pill text-center w-50 p-2 me-4">Moyen</h4>
 		<div>Cela indique que l'air est tout juste respirable</div>
 	</div>
 	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
-		<h4 class="fourth rounded-pill text-center w-25 p-2 me-4">Mauvais</h4>
+		<h4 class="fourth rounded-pill text-center w-50 p-2 me-4">Mauvais</h4>
 		<div>Cela indique que la respiration n'est pas conseillée</div>
 	</div>
 	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
-		<h4 class="fifth rounded-pill text-center w-25 p-2 me-4">Toxique</h4>
+		<h4 class="fifth rounded-pill text-center w-50 p-2 me-4">Toxique</h4>
 		<div>Cela indique que vous devez porter un masque</div>
 	</div>
-
-
 {% endblock %}
