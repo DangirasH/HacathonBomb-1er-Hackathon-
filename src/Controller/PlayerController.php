@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\PlayerManager;
+use App\Controller\Level;
 
 class PlayerController extends AbstractController
 {

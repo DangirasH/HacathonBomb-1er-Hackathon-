@@ -21,13 +21,13 @@ class BombController extends AbstractController
         $lon = $_GET['lon'];
         $airQuality = $_GET['airQuality'];
         $alreadyBombed = '';
+        $bombedManager = new BombedManager();
+        if (!empty($bombedManager->selectBomb($lat, $lon))) {
+            $alreadyBombed = "Déjà bombardé !";
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $bomb = array_map('trim', $_POST);
 
-            $bombedManager = new BombedManager();
-            if (!empty($bombedManager->selectBomb(47.88203, 1.86992))) {
-                $alreadyBombed = "Déjà bombardé !";
-            }
             $bombedManager->insert($bomb);
             header('Location: player?airQuality=' . $airQuality);
         }
