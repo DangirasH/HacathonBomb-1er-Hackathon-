@@ -1,13 +1,17 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-
+	<div class="container d-flex justify-content-center mt-5"
+	<ul class="list-group">
+  <li class="list-group-item">Votre latitude={{bombed.lat}}</li>
+  <li class="list-group-item">Votre longitude={{bombed.lot}}</li>
+    </div>
 	{% include "Bomb/_formBomb.html.twig" %}
 
 	<main class"">
 
 		<p>{{ alreadyBombed }}</p>
-
+	
 		<div class="container card d-flex justify-content-end mt-5 mb-5 rounded-circle" style="width: 10rem;">
 			<img src="/assets/images/sunflower-seed.png" class="card-img-top" alt="...">
 		</div>
