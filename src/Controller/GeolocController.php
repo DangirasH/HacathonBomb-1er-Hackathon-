@@ -8,11 +8,11 @@ use App\Model\AirManager;
 class GeolocController extends AbstractController
 {
     public array $airQuality = [
-        1 => 'Très bon',
-        2 => 'Bon',
-        3 => 'Bof',
-        4 => 'Faible',
-        5 => 'JS',
+        1 => 'Bien',
+        2 => 'Viable',
+        3 => 'Moyen',
+        4 => 'Mauvais',
+        5 => 'Toxique',
     ];
 
     public function index(): ?string
@@ -33,7 +33,7 @@ class GeolocController extends AbstractController
             $air = $airManager->show($lat, $lon);
             $detailsAirQuality = $air['list'][0]['main']['aqi'];
 
-            header('Location: bomb?lon=' . $lon . '&lat=' . $lat);
+            header('Location: bomb?lon=' . $lon . '&lat=' . $lat . '&airQuality=' . $detailsAirQuality);
             return null;
         }
 

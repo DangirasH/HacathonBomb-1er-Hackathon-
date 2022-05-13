@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lora:wght@400;500;600&family=Merriweather:wght@300;400;900&display=swap');
-@import url('slogan.css');
+@import url('login.css');
+@import url('geolog.css');
 :root {
     --bs-harchi-pauvre-rgb: 255, 115, 115;
     --bs-harchi-pauvre: #FF7373;
@@ -19,13 +20,14 @@
     --bs-secondary-dark-rgb: 177, 203, 181;
     --bs-secondary-dark:#B1CBB5;
     --bs-light-rgb:229, 229, 229;
-    --bs-light:#E5E5E5;
+    --bs-light:#02610f;
+    --bs-mine:#044b1c;
     --bs-dark-rgb: 03, 03, 03;
-    --bs-dark:#030303;
+    --bs-dark:#175e05;
     --bs-dark-light-rgb: 196, 196, 196;
-    --bs-dark-light:#C4C4C4;
-
+    --bs-dark-light:#B1CBB5;
     --shadow-color: rgba(77, 60, 60, 0.2);
+    --seperator-color: #175e05;
     --first-color: #73FF88;
     --second-color: #FCFF73;
     --third-color: #FFB967;
@@ -39,6 +41,7 @@
     --header-font-size: 96px;
     --title-font-size: 36px;
     --font-size-nav: 28px;
+    --font-size-button: 26px;
 
     --font-size-footer: 20px;
     
@@ -55,8 +58,32 @@
 }
 body{
     background-color: var(--bs-dark-light);
+    max-height: 100%;
 }
 p{
-    font-size: 2rem;
+    font-size: 1rem;
     margin: 0%;
 }
+
+div button img{
+    height: 14rem;
+}
+
+div img {
+    height: 10rem;
+}
+
+.background{
+background-image: url('/assets/images/background.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+  
+a .btn-hover {
+    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+#map { height: 180px; }

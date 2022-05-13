@@ -1,4 +1,4 @@
-.first {
+.first, .boutonLogin {
     background-color: var(--first-color);
 }
 
@@ -16,4 +16,13 @@
 
 .fifth {
     background-color: var(--fifth-color);
+}
+
+p {
+    font-size: var(--font-size);
+}
+
+.boutonLoginHome {
+    font-size: var(--font-size-button);
+    background-color: var(--third-color);
 }

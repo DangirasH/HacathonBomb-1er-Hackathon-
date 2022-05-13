@@ -5,45 +5,79 @@
 
 {% block content %}
 
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<div class="col-lg-12 d-flex justify-content-center">
-			<button type="button" class="btn btn-primary rounded-pill p-2">Login</button>
+	<div class="container-fluid d-flex flex-column justify-content-center align-items-center header mt-3">
+		<div class="">
+			<h1>Flower Bombers</h1>
+		</div>
+		<div class="col-lg-12 d-flex justify-content-center align-items-center">
+			<a type="button" class="boutonLoginHome btn rounded-pill m-3 p-2" href="/connexion">
+				<strong class="p-3">Login</strong>
+			</a>
 		</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<div class="col-lg-12 d-flex justify-content-center">
-			<h1>Comment jouer</h1>
+
+	<div class="bg-light">
+		<div class="container-fluid mb-2 d-flex justify-content-center align-items-center header">
+			<div class="col-lg-12 d-flex justify-content-center border-bottom border-dark pt-3">
+				<h1>Comment jouer ?</h1>
+			</div>
+		</div>
+		<div class="container-fluid mb-2 d-flex justify-content-center align-items-center header pt-2">
+			<p>Connectez vous !</p>
+		</div>
+		<div class="container-fluid mb-2 d-flex justify-content-center align-items-center header">
+			<p>Identifiez la zone...</p>
+		</div>
+		<div class="container-fluid mb-2 pb-3 d-flex justify-content-center align-items-center header">
+			<p>... bombardez avec le Flower Bomb !!!</p>
 		</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<p>Connectez vous à l'aide du Login</p>
+	<div class="d-flex justify-content-center">
+		<img src="/assets/images/plante.png" class="justify-content-center w-50 p-3" alt="plante">
 	</div>
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<p>Plantez les graines (ou dispersez les)</p>
+	<div class="d-flex justify-content-center m-3">
+		<div class="justify-content-center">
+		Le Ficus est un genre dans la famille des Moraceae, représenté par des arbres, des arbustes ou des lianes.
+		Ficus était en latin le nom commun du figuier, l'arbre cultivé dans le bassin méditerranéen pour ses fruits comestibles, les figues. 
+		</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<p>Appuyez sur le bouton bombe</p>
+	<div class="d-flex justify-content-center">
+		<img src="/assets/images/iris.png" class="justify-content-center w-50 p-3" alt="plante">
 	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="first rounded-pill p-2 me-4">Bien</h2>
-		<div>Cela indique que l'air est bien</div>
+	<div class="d-flex justify-content-center m-3">
+		<div class="justify-content-center">
+			Hedera helix Shamrock
+			Vous connaissez certainement cette plante sous le nom de lierre.
+			Elle extrait le trichloréthylène et le benzène de l’atmosphère, mais surtout le formaldéhyde, une substance présente dans pratiquement tous les intérieurs (aggloméré, meubles et tissus).
+		</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="second rounded-pill p-2 me-4">Bof</h2>
-		<div>Cela indique que l'air est bien</div>
+	<div class="d-flex justify-content-center">
+		<img src="/assets/images/monstera.png" class="justify-content-center w-50 p-3" alt="plante">
 	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="third rounded-pill p-2 me-4">Moyen</h2>
-		<div>Cela indique que l'air est bien</div>
+	<div class="d-flex justify-content-center m-3">
+		<div class="justify-content-center mb-3">
+		 	Le genre Monstera comprend plus d'une centaine d'espèces de plantes épiphytes de la famille des Aracées, originaires des régions tropicales d'Amérique. 
+			Cette grande plante est en outre parfaite pour créer une séparation dans une pièce et pour purifier l’air.
+		</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="fourth rounded-pill p-2 me-4">Pauvre</h2>
-		<div>Cela indique que l'air est bien</div>
+	<div class="container-fluid mt-4 mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="first rounded-pill text-center w-50 p-2 me-4">Bien</h4>
+		<div>Cela indique que l'air est de bonne qualitée</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="fifth rounded-pill p-2 me-4">Nique</h2>
-		<div>Cela indique que l'air est bien</div>
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="second rounded-pill text-center w-50 p-2 me-4">Viable</h4>
+		<div>Cela indique que vous etes en zone normal</div>
 	</div>
-
-
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="third rounded-pill text-center w-50 p-2 me-4">Moyen</h4>
+		<div>Cela indique que l'air est tout juste respirable</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="fourth rounded-pill text-center w-50 p-2 me-4">Mauvais</h4>
+		<div>Cela indique que la respiration n'est pas conseillée</div>
+	</div>
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="fifth rounded-pill text-center w-50 p-2 me-4">Toxique</h4>
+		<div>Cela indique que vous devez porter un masque</div>
+	</div>
 {% endblock %}
