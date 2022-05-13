@@ -55,4 +55,26 @@
 				</a>
 			</div>
 		</main>
-	{% endblock %}
+	<section class="Map">
+ 		<div id="map"></div>
+	</section>
+
+{% endblock %}
+
+{% block javascript %}
+
+<script>
+
+var map = L.map('map').setView([{{ lat }}, {{ lon }}], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([{{ lat }}, {{ lon }}]).addTo(map)
+    .bindPopup('Vous avez Bombardé cette zone, GG my Flower')
+    .openPopup();
+		
+</script>
+
+{% endblock %}
