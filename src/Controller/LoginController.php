@@ -18,9 +18,9 @@ class LoginController extends AbstractController
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByName($connection['name']);
                 if ($user) {
-                    if (password_verify($connection['password'], $user['password'])) {
+                    if ($connection['password'] === $user['password']) {
                         $_SESSION['user'] = $user['id'];
-                        header('Location: /');
+                        header('Location: player');
                     } else {
                         $errors[] = 'Mot de passe inconnu';
                     }
