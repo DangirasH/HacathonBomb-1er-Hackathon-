@@ -20,13 +20,14 @@
     --bs-secondary-dark-rgb: 177, 203, 181;
     --bs-secondary-dark:#B1CBB5;
     --bs-light-rgb:229, 229, 229;
-    --bs-light:#E5E5E5;
+    --bs-light:#02610f;
+    --bs-mine:#044b1c;
     --bs-dark-rgb: 03, 03, 03;
-    --bs-dark:#030303;
+    --bs-dark:#175e05;
     --bs-dark-light-rgb: 196, 196, 196;
-    --bs-dark-light:#C4C4C4;
-
+    --bs-dark-light:#B1CBB5;
     --shadow-color: rgba(77, 60, 60, 0.2);
+    --seperator-color: #175e05;
     --first-color: #73FF88;
     --second-color: #FCFF73;
     --third-color: #FFB967;
@@ -70,4 +71,10 @@ div button img{
 
 div img {
     height: 10rem;
+}
+
+.background{
+background-image: url('/assets/images/background.jpg');
+background-repeat: no-repeat;
+background-size: cover;
 }
