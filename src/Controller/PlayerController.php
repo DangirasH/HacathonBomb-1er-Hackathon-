@@ -15,6 +15,13 @@ class PlayerController extends AbstractController
         5 => 'Toxique',
     ];
 
+    public array $avatar = [
+        1 => '/assets/images/sunflower-seed.png',
+        2 => '/assets/images/sprout.png',
+        3 => '/assets/images/plante.png',
+        4 => '/assets/images/tree.png',
+    ];
+
     public function index(): string
     {
         $playerManager = new PlayerManager();
@@ -32,6 +39,7 @@ class PlayerController extends AbstractController
 
         return $this->twig->render('Player/index.html.twig', [
             'player' => $player,
+            'avatar' => $this->avatar,
             'progression' => $progression,
         ]);
     }
