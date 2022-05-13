@@ -2,16 +2,24 @@
 
 {% block content %}
 
+{% if (alreadyBombed) %}
 		<div class="container d-flex justify-content-center">
-			<a type="button" class="btn bg-warning rounded-pill m-3 p-2 fs-1" href="/connexion">
+			<a type="button" class="btn bg-warning rounded-pill m-3 p-2 fs-1" href="/geoloc">
 				<strong class="p-3">{{ alreadyBombed }}</strong>
 			</a>
 		</div>
+		{% else %}
+			<div class="container d-flex justify-content-center">
+			<a type="button" class="btn bg-success text-light rounded-pill m-3 p-2 fs-1">
+				<strong class="p-3">Vous pouvez y aller !</strong>
+			</a>
+		</div>
+{% endif %}
 
 	<div class="container d-flex justify-content-center mt-5"
 	<ul class="list-group">
-  <li class="list-group-item">Votre latitude={{bombed.lat}}</li>
-  <li class="list-group-item">Votre longitude={{bombed.lot}}</li>
+  <li class="list-group-item text-center">Votre latitude = {{ lat }}</li>
+  <li class="list-group-item text-center">Votre longitude = {{ lon }}</li>
     </div>
 
 	{% include "Bomb/_formBomb.html.twig" %}

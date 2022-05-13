@@ -23,7 +23,7 @@ class BombController extends AbstractController
         $alreadyBombed = '';
         $bombedManager = new BombedManager();
         if (!empty($bombedManager->selectBomb($lat, $lon))) {
-            $alreadyBombed = "Déjà bombardé !";
+            $alreadyBombed = "Zone déjà bombardée !";
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $bomb = array_map('trim', $_POST);
