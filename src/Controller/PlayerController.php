@@ -7,11 +7,11 @@ use App\Model\PlayerManager;
 class PlayerController extends AbstractController
 {
     public array $airQuality = [
-        1 => 'Très bon',
-        2 => 'Bon',
-        3 => 'Bof',
-        4 => 'Faible',
-        5 => 'JS',
+        1 => 'Bien',
+        2 => 'Viable',
+        3 => 'Moyen',
+        4 => 'Mauvais',
+        5 => 'Toxique',
     ];
 
     public function index(): string
