@@ -17,5 +17,5 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'register/add' => ['RegisterController', 'add'],
     'connexion' => ['LoginController', 'login'],
-    'player' => ['PlayerController', 'index',],
+    'player' => ['PlayerController', 'index',]
 ];
