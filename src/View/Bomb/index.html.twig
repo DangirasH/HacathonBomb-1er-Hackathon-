@@ -26,6 +26,10 @@
 
 		{% include "Bomb/_formBomb.html.twig" %}
 
+		<section class="Map">
+ 			<div id="map"></div>
+		</section>
+
 		<main class"">
 
 			<div class="container rounded-circle card d-flex justify-content-end mt-5 mb-5" style="width: 10rem;">
@@ -55,10 +59,6 @@
 				</a>
 			</div>
 		</main>
-	<section class="Map">
- 		<div id="map"></div>
-	</section>
-
 {% endblock %}
 
 {% block javascript %}
@@ -72,7 +72,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker([{{ lat }}, {{ lon }}]).addTo(map)
-    .bindPopup('Vous avez Bombardé cette zone, GG my Flower')
+    .bindPopup('Vous allez Bombardé cette zone, GG my Flower')
     .openPopup();
 		
 </script>
