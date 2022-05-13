@@ -5,44 +5,46 @@
 
 {% block content %}
 
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<div class="col-lg-12 d-flex justify-content-center">
-			<button type="button" class="btn btn-primary rounded-pill p-2">Login</button>
+	<div class="container-fluid d-flex justify-content-center align-items-center header">
+		<div class="col-lg-12 d-flex justify-content-center align-items-center">
+			<a type="button" class="boutonLogin btn rounded-pill m-3 p-2" href="/connexion"><strong class="p-3">Login</strong></a>
 		</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<div class="col-lg-12 d-flex justify-content-center">
-			<h1>Comment jouer</h1>
+	<div class="bg-light">
+		<div class="container-fluid mb-2 d-flex justify-content-center align-items-center header">
+			<div class="col-lg-12 d-flex justify-content-center p-3">
+				<h1>Comment jouer ?</h1>
+			</div>
+		</div>
+		<div class="container-fluid mb-2 d-flex justify-content-center align-items-center header">
+			<p>Connectez vous !</p>
+		</div>
+		<div class="container-fluid mb-2 d-flex justify-content-center align-items-center header">
+			<p>Identifiez la zone...</p>
+		</div>
+		<div class="container-fluid mb-2 pb-3 d-flex justify-content-center align-items-center header">
+			<p>... bombardez !!!</p>
 		</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<p>Connectez vous à l'aide du Login</p>
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="first rounded-pill text-center w-25 p-2 me-4">Bien</h4>
+		<div>Cela indique que l'air est de bonne qualitée</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<p>Plantez les graines (ou dispersez les)</p>
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="second rounded-pill text-center w-25 p-2 me-4">Viable</h4>
+		<div>Cela indique que vous etes en zone normal</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex justify-content-center align-items-center header">
-		<p>Appuyez sur le bouton bombe</p>
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="third rounded-pill text-center w-25 p-2 me-4">Moyen</h4>
+		<div>Cela indique que l'air est tout juste respirable</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="first rounded-pill p-2 me-4">Bien</h2>
-		<div>Cela indique que l'air est bien</div>
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="fourth rounded-pill text-center w-25 p-2 me-4">Mauvais</h4>
+		<div>Cela indique que la respiration n'est pas conseillée</div>
 	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="second rounded-pill p-2 me-4">Bof</h2>
-		<div>Cela indique que l'air est bien</div>
-	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="third rounded-pill p-2 me-4">Moyen</h2>
-		<div>Cela indique que l'air est bien</div>
-	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="fourth rounded-pill p-2 me-4">Pauvre</h2>
-		<div>Cela indique que l'air est bien</div>
-	</div>
-	<div class="container-fluid mb-4 d-flex align-items-center">
-		<h2 class="fifth rounded-pill p-2 me-4">Nique</h2>
-		<div>Cela indique que l'air est bien</div>
+	<div class="container-fluid mb-4 d-flex justify-content-between align-items-center">
+		<h4 class="fifth rounded-pill text-center w-25 p-2 me-4">Toxique</h4>
+		<div>Cela indique que vous devez porter un masque</div>
 	</div>
 
 
