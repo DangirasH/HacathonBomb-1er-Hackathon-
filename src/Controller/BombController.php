@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\BombedManager;
+use App\Model\PlayerManager;
 
 class BombController extends AbstractController
 {
@@ -19,20 +20,29 @@ class BombController extends AbstractController
         $lat = $_GET['lat'];
         $lon = $_GET['lon'];
         $airQuality = $_GET['airQuality'];
+        $alreadyBombed = '';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $bomb = array_map('trim', $_POST);
 
             $bombedManager = new BombedManager();
-            if (empty($bombedManager->selectBomb($bomb['lat'], $bomb['lon']))) {
-                $bombedManager->insert($bomb);
-                header('Location: player?airQuality=' . $airQuality);
+            if (!empty($bombedManager->selectBomb(47.88203, 1.86992))) {
+                $alreadyBombed = "Déjà bombardé !";
             }
+            $bombedManager->insert($bomb);
+            header('Location: player?airQuality=' . $airQuality);
         }
+        $playerManager = new PlayerManager();
+        $player = $playerManager->selectOneById($_SESSION['user']);
+        $progression = $player['xp'] - ($player['level'] - 1) * 100;
+
         return $this->twig->render('Bomb/index.html.twig', [
             'lat' => $lat,
             'lon' => $lon,
             'airQuality' => $airQuality,
-            'user_id' => $_SESSION['user']
+            'user_id' => $_SESSION['user'],
+            'alreadyBombed' => $alreadyBombed,
+            'player' => $player,
+            'progression' => $progression,
         ]);
     }
 }
