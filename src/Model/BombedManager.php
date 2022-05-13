@@ -28,7 +28,7 @@ class BombedManager extends AbstractManager
         $query = 'SELECT * FROM bombed
         WHERE lat between ' . round($lat, 4, PHP_ROUND_HALF_DOWN) .
         ' AND ' . (round($lat, 4, PHP_ROUND_HALF_UP) + 0.001) .
-        ' AND lon between ' . round($lon, 5, PHP_ROUND_HALF_DOWN) - 0.0001 .
+        ' AND lon between ' . (round($lon, 5, PHP_ROUND_HALF_DOWN) - 0.00001) .
         ' AND ' . (round($lon, 5, PHP_ROUND_HALF_UP));
 
         return $this->pdo->query($query)->fetchAll();
